@@ -1,0 +1,31 @@
+import numpy as np 
+from numpy.linalg import norm
+A = np.array([2,-12,8.5])
+B = np.array([0.7, 21.2, 0.8])
+C = np.array([5,-0.6, -4])
+D = np.array([1,-8.2, 5])
+
+BA = A - B 
+BC = C - B
+
+cos_angle = BA @ BC / (norm(BA) * norm(BC))
+angle = np.arccos(cos_angle)
+print("Косинус угла:", cos_angle)
+print("Сам угол:", np.rad2deg(angle))
+
+--------------------------------------
+
+import numpy as np
+from numpy.linalg import norm
+a = np.array([1,1,1,1,1,1,1,0,0,0,0])
+b = np.array([0,1,0,0,0,0,0,1,1,1,0])
+c = np.array([0,1,0,1,1,0,0,0,0,1,1])
+
+res1 = a @ b / (norm(a) * norm(b))
+res2 = a @ c / (norm(a) * norm(c))
+res3 = b @ c / (norm(b) * norm(c))
+
+# Допишите код здесь
+print("СМИ 1 и 2:", res1)
+print("СМИ 1 и 3:", res2)
+print("СМИ 2 и 3:", res3)
