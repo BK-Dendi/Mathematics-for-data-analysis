@@ -1,0 +1,24 @@
+import numpy as np 
+
+a = np.array([7,11,10,8,4,15,15])
+b = np.array([0,7,8,0,6,9,10])
+c = np.array([14,0,17,0,19,18,20])
+print(a * 450 + b * 1300 + c * 750)
+
+import numpy as np
+alpha = np.deg2rad(70)
+print(np.sin(alpha), np.cos(alpha), np.tan(alpha))
+
+import numpy as np
+
+sin_alpha = -np.pi/4
+cos_beta = np.pi/5
+alpha_rad = np.arcsin(sin_alpha)
+beta_rad = np.arccos(cos_beta)
+# Допишите код здесь
+alpha = np.rad2deg(alpha_rad)
+beta = np.rad2deg(beta_rad)
+
+print(alpha, beta) 
+print(np.tan(alpha_rad)) 
+print(np.tan(beta_rad)) 
