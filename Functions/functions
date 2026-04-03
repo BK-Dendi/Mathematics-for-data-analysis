@@ -1,0 +1,32 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+# Считывание данных. В результате data - NumPy массив.
+data = pd.read_csv('https://code.s3.yandex.net/Math/datasets/oleg_float.csv', index_col=0)
+data = data.values.astype(float)
+
+x_data = data[:,1]
+y_data = data[:,2]
+
+plt.scatter(x_data,y_data)
+
+coef = np.polyfit(x_data,y_data,1)
+f = np.poly1d(coef)
+x = data[:,0]
+
+plt.plot(x_data,f(x_data))
+print(coef)
+
+
+
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Чтение данных. data - NumPy массив с 7-ю столбцами.
+vals = pd.read_csv('https://code.s3.yandex.net/Math/datasets/auto-mpg.csv').to_numpy()
+
+plt.scatter(vals[:,4], vals[:,0], c = vals[:,1])
+plt.xscale('log')
+plt.yscale('log')
