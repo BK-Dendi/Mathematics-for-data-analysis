@@ -1,0 +1,104 @@
+from scipy import stats
+from random import randint 
+
+n = 5
+
+X = stats.binom(n, 1/3)
+
+p = X.pmf(2)
+
+print(p)  
+
+
+---------------------------
+
+from scipy import stats
+
+p = 1/1000
+X = stats.geom(p)
+
+result = 1 - X.cdf(500)
+
+print(result)
+
+---------------------------
+
+from scipy import stats
+import numpy as np
+
+mu = 2.5
+
+X = stats.poisson(mu)
+
+a = np.array([0,1,2,3,4])
+
+result = X.pmf(a)
+
+print(result) 
+
+
+---------------------------
+
+
+from scipy import stats
+
+mu = 7
+X = stats.poisson(mu)
+result = X.pmf(9)
+
+print(result)  
+
+
+---------------------------
+
+
+from scipy import stats
+
+mu = 7
+X = stats.poisson(mu)
+
+result = 1 - X.cdf(9)
+print(result)
+
+---------------------------
+
+
+from scipy import stats
+n = 10 
+p = 4/52 
+X = stats.geom(p)
+result = X.cdf(n)
+
+print(result)
+
+
+---------------------------
+
+
+from scipy import stats
+
+n = 12 
+p = 0.72 
+X = stats.binom(n,p)
+
+result = 1 - X.cdf(7)
+
+print(result) 
+
+---------------------------
+
+
+
+from scipy import stats
+
+mu = 20 
+X = stats.poisson(mu)
+
+
+result_1 = X.cdf(15)
+result_2 = X.cdf(30) - result_1
+result_3 = 1 - X.cdf(30)
+
+print(result_1)
+print(result_2)
+print(result_3)
