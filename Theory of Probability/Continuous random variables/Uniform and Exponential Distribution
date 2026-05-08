@@ -1,0 +1,32 @@
+from scipy.stats import uniform
+
+a = 0 
+b = 180 
+x = 30
+print(1 - uniform.cdf(x = x, loc = a, scale = b))
+
+
+--------------------------------------------------
+
+
+
+from scipy.stats import expon
+Lambda = 1/45 
+Scale = 1 / Lambda 
+x = 600
+print(1 - expon.cdf(x = x, scale = Scale))
+
+
+--------------------------------------------------
+
+
+from scipy.stats import uniform
+a = 9 
+b = 10 
+x = 10 
+print(uniform.cdf(x = x, loc = a, scale = 10))
+
+
+--------------------------------------------------
+
+
