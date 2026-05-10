@@ -1,0 +1,120 @@
+import numpy as np
+from matplotlib import pyplot as plt
+
+x_10 = np.random.binomial(1, 0.5, 10)
+val_10, cnt_10 = np.unique(x_10, return_counts=True)
+pmf_10 = cnt_10 / len(x_10) 
+
+plt.bar(val_10, pmf_10) 
+
+----------------------------------
+
+
+import numpy as np
+from matplotlib import pyplot as plt
+
+x_100 = np.random.binomial(1, 0.5, 100)
+val_100, cnt_100 = np.unique(x_100, return_counts=True)
+pmf_100 = cnt_100 / len(x_100)
+
+plt.bar(val_100, pmf_100, width=0.4)
+
+
+
+----------------------------------
+
+
+import numpy as np
+from matplotlib import pyplot as plt
+
+x_1000 = np.random.binomial(1, 0.5, 1000)
+val_1000, cnt_1000 = np.unique(x_1000, return_counts=True)
+pmf_1000 = cnt_1000 / len(x_1000)
+
+plt.bar(val_1000, pmf_1000, width=0.4)
+
+
+
+----------------------------------
+
+
+import numpy as np
+from matplotlib import pyplot as plt
+
+x = np.random.geometric(p = 0.01, size = 100000)
+bins = np.arange(0, 1000, 200)
+plt.hist(x, bins = bins,  weights = np.ones_like(x) / len(x))
+
+
+----------------------------------
+
+
+В любительском вокальном соревновании участвовали 20 человек. 
+Судья записал, сколько секунд каждый из участников тянул ноту «соль» на одном выдохе. 
+Постройте столбчатую диаграмму этих данных с относительной частотой.
+
+
+import numpy as np
+from matplotlib import pyplot as plt
+
+sec = np.array([22, 17, 27, 19, 29, 19, 19, 18, 24, 25, 18, 21, 25, 20, 15, 24, 26, 19, 28, 23])
+
+val, cnt = np.unique(sec, return_counts = True)
+pmf = cnt / len(sec)
+plt.bar(val, pmf)
+
+
+
+----------------------------------
+
+
+В этой задаче вы попробуете проиллюстрировать некоторые данные о пассажирах Титаника.
+Некоторые характеристики пассажиров уже записаны в переменные:
+pclass — класс пассажира (1— высший, 2 — средний, 3— низший);
+age — возраст пассажира.
+1) Постройте распределение классов пассажиров с помощью столбчатой диаграммы.
+
+
+import numpy as np
+import pandas as pd
+from matplotlib import pyplot as plt
+
+df = pd.read_csv("https://code.s3.yandex.net/Math/datasets/titanic.csv")
+pclass = df["Pclass"].to_numpy()
+age = df["Age"].to_numpy()
+
+val, cnt = np.unique(pclass,return_counts = True)
+pmf = cnt / len(pclass)
+
+plt.bar(val, pmf)
+
+
+2)Постройте гистограмму с абсолютными частотами для возраста пассажиров.
+
+
+import numpy as np
+import pandas as pd
+from matplotlib import pyplot as plt
+
+df = pd.read_csv("https://code.s3.yandex.net/Math/datasets/titanic.csv")
+pclass = df["Pclass"].to_numpy()
+age = df["Age"].to_numpy()
+
+plt.hist(age)
+
+
+
+---------------------------
+
+
+Сгенерируйте выборку со 
+100 000 значений из геометрического распределения с вероятностью успеха 0.5
+Постройте гистограмму для этой выборки с относительной частотой. 
+Количество бинов оставьте по умолчанию. Сгенерированную выборку сохраните в переменной x.
+
+
+import numpy as np
+from matplotlib import pyplot as plt
+
+x = np.random.geometric(0.5, 100000)
+plt.hist(x, bins = np.arange(0, 16,1), weights = np.ones_like(x) / len(x))
